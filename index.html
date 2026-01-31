@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ ULTIMATE ACADEMY | BY ZILDJIAN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0070f3;
+            --bg: #f0f7ff;
+            --white: #ffffff;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --accent: #00dfd8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--dark); overflow-x: hidden; }
+
+        /* --- ANIMASI --- */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
+
+        /* --- LAYOUT SISTEM SLIDE --- */
+        .slide {
+            display: none;
+            min-height: 100vh;
+            padding: 40px 20px;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .active { display: block; }
+
+        .container { max-width: 800px; margin: 0 auto; }
+
+        /* --- SLIDE 1: WELCOME --- */
+        #slide-welcome {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: var(--white);
+            text-align: center;
+        }
+        .logo-main {
+            width: 150px; height: 150px; border-radius: 50%;
+            border: 6px solid var(--primary); margin-bottom: 25px;
+            box-shadow: 0 20px 40px rgba(0, 112, 243, 0.2);
+        }
+
+        /* --- SLIDE 2: DASHBOARD --- */
+        .header-dash { text-align: center; margin-bottom: 40px; }
+        .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        .menu-card {
+            background: var(--white); padding: 25px; border-radius: 20px;
+            display: flex; align-items: center; gap: 20px; cursor: pointer;
+            transition: 0.3s; border: 1px solid rgba(0,0,0,0.05);
+        }
+        .menu-card:hover { transform: scale(1.02); border-color: var(--primary); box-shadow: 0 10px 30px rgba(0,112,243,0.1); }
+        .icon-circle { width: 60px; height: 60px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+
+        /* --- SLIDE 3, 4, 5: MATERI --- */
+        .materi-header { margin-bottom: 30px; border-bottom: 2px solid var(--primary); padding-bottom: 15px; }
+        .tech-box { background: var(--white); padding: 25px; border-radius: 20px; margin-bottom: 20px; }
+        .tech-box h3 { color: var(--primary); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .code-snippet { font-family: 'Fira Code', monospace; background: #1e293b; color: #e2e8f0; padding: 15px; border-radius: 12px; font-size: 0.85rem; margin: 10px 0; overflow-x: auto; }
+
+        /* --- BUTTONS --- */
+        .btn { padding: 16px 32px; border-radius: 12px; border: none; font-weight: 800; cursor: pointer; transition: 0.3s; font-size: 1rem; }
+        .btn-primary { background: var(--primary); color: white; box-shadow: 0 8px 20px rgba(0,112,243,0.3); }
+        .btn-back { background: var(--dark); color: white; margin-bottom: 20px; }
+
+        /* --- DONASI --- */
+        .donate-bar { background: var(--dark); color: white; padding: 25px; border-radius: 20px; text-align: center; margin-top: 40px; }
+        
+        .footer { text-align: center; padding: 40px; color: var(--gray); font-size: 0.8rem; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div id="slide-1" class="slide active">
+        <div class="container" style="text-align: center;">
+            <img src="https://autoresbot.com/tmp_files/7f9a5a8b-3675-4e5c-91fa-c43a013f6ed5.jpg" class="logo-main">
+            <h1 style="font-size: 2.5rem; color: var(--primary);">XYZ ULTIMATE</h1>
+            <p style="letter-spacing: 3px; font-weight: 600; color: var(--gray); margin-bottom: 40px;">BY ZILDJIAN</p>
+            <button class="btn btn-primary" onclick="goToSlide(2)">ENTER ACADEMY</button>
+        </div>
+    </div>
+
+    <div id="slide-2" class="slide">
+        <div class="container">
+            <div class="header-dash">
+                <h1>Main Learning Path</h1>
+                <p>Pilih spesialisasi teknis kamu</p>
+            </div>
+            <div class="grid">
+                <div class="menu-card" onclick="goToSlide(3)">
+                    <div class="icon-circle">🌐</div>
+                    <div><h3>Fullstack Web</h3><p>Membangun ekosistem web modern.</p></div>
+                </div>
+                <div class="menu-card" onclick="goToSlide(4)">
+                    <div class="icon-circle">🤖</div>
+                    <div><h3>Bot Engineering</h3><p>Automasi tingkat tinggi dengan JS.</p></div>
+                </div>
+                <div class="menu-card" onclick="goToSlide(5)">
+                    <div class="icon-circle">🎨</div>
+                    <div><h3>UI/UX Architecture</h3><p>Sistem desain & user psychology.</p></div>
+                </div>
+            </div>
+            <div class="donate-bar">
+                <p>SUPPORT CREATOR</p>
+                <h2 style="color: var(--accent);">6285183122570</h2>
+                <small>DANA / GOPAY</small>
+            </div>
+            <div class="footer">BY ZILDJIAN • 2026</div>
+        </div>
+    </div>
+
+    <div id="slide-3" class="slide">
+        <div class="container">
+            <button class="btn btn-back" onclick="goToSlide(2)">← Dashboard</button>
+            <div class="materi-header">
+                <h1>Web Development Master</h1>
+                <p>Full Tech Documentation by ZILDJIAN</p>
+            </div>
+            <div class="tech-box">
+                <h3>01. Semantic HTML</h3>
+                <p>Gunakan struktur SEO-friendly untuk aksesibilitas tinggi.</p>
+                <div class="code-snippet">&lt;header&gt;, &lt;article&gt;, &lt;section&gt;, &lt;aside&gt;</div>
+            </div>
+            <div class="tech-box">
+                <h3>02. Advanced CSS</h3>
+                <p>Kuasai <b>Responsive Design</b> menggunakan media queries dan Flexbox.</p>
+                <div class="code-snippet">display: flex; justify-content: space-between;</div>
+            </div>
+            <div class="tech-box">
+                <h3>03. JS Dom & Logic</h3>
+                <p>Pelajari sistem <i>Asynchronous</i> untuk website tanpa reload.</p>
+                <div class="code-snippet">async function fetchData() { const res = await fetch(url); }</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="slide-4" class="slide">
+        <div class="container">
+            <button class="btn btn-back" onclick="goToSlide(2)">← Dashboard</button>
+            <div class="materi-header">
+                <h1>Bot Automation Tech</h1>
+                <p>Scripting Engineering by ZILDJIAN</p>
+            </div>
+            <div class="tech-box">
+                <h3>01. Node.js Setup</h3>
+                <p>Gunakan runtime Node.js LTS untuk stabilitas server bot.</p>
+                <div class="code-snippet">npm init -y && npm install @whiskeysockets/baileys</div>
+            </div>
+            <div class="tech-box">
+                <h3>02. Session Management</h3>
+                <p>Pahami sistem <b>Multi-Auth</b> agar bot tidak perlu scan ulang setiap restart.</p>
+            </div>
+            <div class="tech-box">
+                <h3>03. Command Handler</h3>
+                <p>Gunakan Regex atau Switch Case untuk filter command user secara akurat.</p>
+                <div class="code-snippet">case 'menu': reply(menuText); break;</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="slide-5" class="slide">
+        <div class="container">
+            <button class="btn btn-back" onclick="goToSlide(2)">← Dashboard</button>
+            <div class="materi-header">
+                <h1>UI/UX Architecture</h1>
+                <p>Visual Strategy by ZILDJIAN</p>
+            </div>
+            <div class="tech-box">
+                <h3>01. Design System</h3>
+                <p>Buat <b>Style Guide</b> (Warna, Tipografi, Spasi) agar desain konsisten.</p>
+            </div>
+            <div class="tech-box">
+                <h3>02. User Psychology</h3>
+                <p>Gunakan hukum <i>Fitts Law</i>: Letakkan tombol penting di area yang mudah dijangkau jempol.</p>
+            </div>
+            <div class="tech-box">
+                <h3>03. Prototyping</h3>
+                <p>Hubungkan frame di Figma dengan transisi <i>Smart Animate</i> untuk simulasi asli.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goToSlide(slideNumber) {
+            // Sembunyikan semua slide
+            const slides = document.querySelectorAll('.slide');
+            slides.forEach(s => s.classList.remove('active'));
+            
+            // Tampilkan slide yang dituju
+            document.getElementById('slide-' + slideNumber).classList.add('active');
+            
+            // Scroll ke atas otomatis
+            window.scrollTo(0,0);
+        }
+    </script>
+</body>
+</html>
