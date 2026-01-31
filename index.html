@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME TO XYZ</title>
+    <style>
+        :root {
+            --primary-blue: #0070f3;
+            --bg-light: #f0f7ff;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg-light);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .card {
+            background: var(--white);
+            width: 90%;
+            max-width: 400px;
+            padding: 40px 20px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 112, 243, 0.1);
+            text-align: center;
+            border: 1px solid rgba(0, 112, 243, 0.1);
+        }
+
+        /* Foto Profil Baru */
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid var(--primary-blue);
+            margin-bottom: 20px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: var(--primary-blue);
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .link-btn {
+            text-decoration: none;
+            color: var(--white);
+            background: var(--primary-blue);
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px 0 rgba(0, 112, 243, 0.3);
+            display: block;
+        }
+
+        .link-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 112, 243, 0.4);
+            filter: brightness(1.1);
+        }
+
+        .donation-box {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 2px dashed #e0eafc;
+        }
+
+        .donation-title {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .payment-info {
+            background: #f0f7ff;
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            border: 1px solid #d0e3ff;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 0.75rem;
+            color: #aaa;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <img src="https://autoresbot.com/tmp_files/7f9a5a8b-3675-4e5c-91fa-c43a013f6ed5.jpg" alt="ZILDJIAN" class="profile-img">
+        
+        <h1>WELCOME TO XYZ</h1>
+
+        <div class="links-container">
+            <a href="https://www.tiktok.com/@zildjian_______?_r=1&_t=ZS-93Wq0i2zFjj" class="link-btn" target="_blank">Follow Me Akun TikTok</a>
+            <a href="https://whatsapp.com/channel/0029VbCH9SfCHDyseo0hGB3o" class="link-btn" target="_blank">Follow Me Channel WA</a>
+            <a href="https://www.instagram.com/van_der_zildjian?igsh=eGJxYml0eXkzNjJm" class="link-btn" target="_blank">Follow Me Akun IG</a>
+        </div>
+
+        <div class="donation-box">
+            <div class="donation-title">SUPPORT PROJECT / DONASI</div>
+            <div class="payment-info">
+                <strong>GOPAY:</strong> 6285183122570<br>
+                <strong>DANA:</strong> 6285183122570
+            </div>
+        </div>
+
+        <div class="footer">
+            © 2026 V1-XYZ PRO
+        </div>
+    </div>
+
+</body>
+</html>
